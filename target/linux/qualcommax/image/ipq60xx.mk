@@ -76,6 +76,19 @@ define Device/glinet_gl-axt1800
 endef
 TARGET_DEVICES += glinet_gl-axt1800
 
+define Device/jdcloud_re-cs-07
+	$(call Device/FitImage)
+	DEVICE_VENDOR := JDCloud
+	DEVICE_MODEL := RE-CS-07
+	SOC := ipq6010
+	BLOCKSIZE := 64k
+	KERNEL_SIZE := 6144k
+	DEVICE_DTS_CONFIG := config@cp03-c4
+	DEVICE_PACKAGES := -ath11k-firmware-ipq6018 -kmod-ath11k-ahb -wpad-basic-mbedtls
+	DEVICE_PACKAGES += kmod-fs-f2fs f2fs-tools
+endef
+TARGET_DEVICES += jdcloud_re-cs-07
+
 define Device/linksys_mr
 	$(call Device/FitImage)
 	DEVICE_VENDOR := Linksys
